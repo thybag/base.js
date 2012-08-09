@@ -1,7 +1,7 @@
  /**
  * TPL provides an ultra light weight, super simple method for quickly templating elements of HTML in javascript.
  * @author Carl Saggs
- * @version 0.1
+ * @version 0.1.2
  * @source https://github.com/thybag/base.js
  */
  (function(){
@@ -41,7 +41,7 @@
 			if(typeof data[i] == 'object'){
 				tpl = this.replaceAttr(tpl,data[i],i);
 			}else{
-				tpl = tpl.replace('{'+i+'}',data[accessor]);
+				tpl = tpl.replace(new RegExp('{'+i+'}','g'),data[accessor]);
 			}
 		}
 		//return templated HTML
