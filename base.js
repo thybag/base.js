@@ -89,7 +89,7 @@
 	 * @param callback fucntion
 	 */
 	this.ajaxGet = function(location,callback){
-		try {xmlhttp = window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP");}  catch (e) { }
+		try {var xmlhttp = window.XMLHttpRequest?new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP");}  catch (e) { }
 			xmlhttp.onreadystatechange = function(){
 				if ((xmlhttp.readyState == 4) && (xmlhttp.status == 200)) {
 					callback(xmlhttp.responseText);
